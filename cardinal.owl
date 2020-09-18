@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://www.childhealthimprints.com/Cardinalities/"
+     xml:base="https://www.childhealthimprints.com/Cardinalities/"
+     xmlns:ont="http://www.co-ode.org/ontologies/ont.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:cardinalities="https://www.childhealthimprints.com/cardinalities/#">
+    <owl:Ontology rdf:about="https://www.childhealthimprints.com/cardinalities/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.childhealthimprints.com/cardinalities/#hasAdministrativeVolume -->
+
+    <owl:ObjectProperty rdf:about="https://www.childhealthimprints.com/cardinalities/#hasAdministrativeVolume"/>
+    
+
+
+    <!-- https://www.childhealthimprints.com/cardinalities/#hasDose -->
+
+    <owl:ObjectProperty rdf:about="https://www.childhealthimprints.com/cardinalities/#hasDose"/>
+    
+
+
+    <!-- https://www.childhealthimprints.com/cardinalities/#hasPostmenstrualAge -->
+
+    <owl:ObjectProperty rdf:about="https://www.childhealthimprints.com/cardinalities/#hasPostmenstrualAge">
+        <rdfs:domain rdf:resource="https://www.childhealthimprints.com/cardinalities/#Infants"/>
+        <rdfs:range rdf:resource="https://www.childhealthimprints.com/cardinalities/#Age"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.childhealthimprints.com/cardinalities/#hasUnit -->
+
+    <owl:ObjectProperty rdf:about="https://www.childhealthimprints.com/cardinalities/#hasUnit"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.childhealthimprints.com/cardinalities/#Age -->
+
+    <owl:Class rdf:about="https://www.childhealthimprints.com/cardinalities/#Age"/>
+    
+
+
+    <!-- https://www.childhealthimprints.com/cardinalities/#Infants -->
+
+    <owl:Class rdf:about="https://www.childhealthimprints.com/cardinalities/#Infants">
+        <owl:equivalentClass rdf:resource="https://www.childhealthimprints.com/cardinalities/#Neonate"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.childhealthimprints.com/cardinalities/#hasDose"/>
+                <owl:someValuesFrom rdf:resource="https://www.childhealthimprints.com/cardinalities/#Unit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.childhealthimprints.com/cardinalities/#hasPostmenstrualAge"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">32</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://www.childhealthimprints.com/cardinalities/#Age"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.childhealthimprints.com/cardinalities/#Neonate -->
+
+    <owl:Class rdf:about="https://www.childhealthimprints.com/cardinalities/#Neonate"/>
+    
+
+
+    <!-- https://www.childhealthimprints.com/cardinalities/#Route -->
+
+    <owl:Class rdf:about="https://www.childhealthimprints.com/cardinalities/#Route"/>
+    
+
+
+    <!-- https://www.childhealthimprints.com/cardinalities/#Suppositories -->
+
+    <owl:Class rdf:about="https://www.childhealthimprints.com/cardinalities/#Suppositories">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.childhealthimprints.com/cardinalities/#hasDose"/>
+                <owl:someValuesFrom rdf:resource="https://www.childhealthimprints.com/cardinalities/#Unit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.childhealthimprints.com/cardinalities/#Unit -->
+
+    <owl:Class rdf:about="https://www.childhealthimprints.com/cardinalities/#Unit"/>
+    
+
+
+    <!-- https://www.childhealthimprints.com/cardinalities/#Volume -->
+
+    <owl:Class rdf:about="https://www.childhealthimprints.com/cardinalities/#Volume">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.childhealthimprints.com/cardinalities/#hasAdministrativeVolume"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">7</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://www.childhealthimprints.com/cardinalities/#Volume"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.childhealthimprints.com/cardinalities/#Intermittent -->
+
+    <owl:NamedIndividual rdf:about="https://www.childhealthimprints.com/cardinalities/#Intermittent">
+        <rdf:type rdf:resource="https://www.childhealthimprints.com/cardinalities/#Route"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.childhealthimprints.com/cardinalities/#Intravenous -->
+
+    <owl:NamedIndividual rdf:about="https://www.childhealthimprints.com/cardinalities/#Intravenous">
+        <rdf:type rdf:resource="https://www.childhealthimprints.com/cardinalities/#Route"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.childhealthimprints.com/cardinalities/#hours -->
+
+    <owl:NamedIndividual rdf:about="https://www.childhealthimprints.com/cardinalities/#hours">
+        <rdf:type rdf:resource="https://www.childhealthimprints.com/cardinalities/#Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.childhealthimprints.com/cardinalities/#kg -->
+
+    <owl:NamedIndividual rdf:about="https://www.childhealthimprints.com/cardinalities/#kg">
+        <rdf:type rdf:resource="https://www.childhealthimprints.com/cardinalities/#Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.childhealthimprints.com/cardinalities/#mg -->
+
+    <owl:NamedIndividual rdf:about="https://www.childhealthimprints.com/cardinalities/#mg">
+        <rdf:type rdf:resource="https://www.childhealthimprints.com/cardinalities/#Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.childhealthimprints.com/cardinalities/#minutes -->
+
+    <owl:NamedIndividual rdf:about="https://www.childhealthimprints.com/cardinalities/#minutes">
+        <rdf:type rdf:resource="https://www.childhealthimprints.com/cardinalities/#Unit"/>
+        <cardinalities:hasUnit rdf:resource="https://www.childhealthimprints.com/cardinalities/#weeks"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.childhealthimprints.com/cardinalities/#weeks -->
+
+    <owl:NamedIndividual rdf:about="https://www.childhealthimprints.com/cardinalities/#weeks">
+        <rdf:type rdf:resource="https://www.childhealthimprints.com/cardinalities/#Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.childhealthimprints.com/cardinalities/#mcl/kg -->
+
+    <owl:NamedIndividual rdf:about="https://www.childhealthimprints.com/cardinalities/#mcl/kg">
+        <rdf:type rdf:resource="https://www.childhealthimprints.com/cardinalities/#Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.childhealthimprints.com/cardinalities/#mg/kg -->
+
+    <owl:NamedIndividual rdf:about="https://www.childhealthimprints.com/cardinalities/#mg/kg">
+        <rdf:type rdf:resource="https://www.childhealthimprints.com/cardinalities/#Unit"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
